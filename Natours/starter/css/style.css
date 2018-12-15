@@ -33,5 +33,45 @@ body {
     url(../img/hero.jpg); /* linear gradient first, then image */
   background-size: cover;
   background-position: top; /* keep image at top on resize */
-  clip-path: polygon(0 0, 100% 50%, 0 0, 100% 50%); /* TRBL */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* TRBL */
+  position: relative; /* by setting this to relative, this becomes the reference for .logo-box */
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px; /* the reference point is the parent element set to relative */
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute; /* best way to absolutely center an element */
+  top: 40%; /* in relation to the parent element! */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* this shifts the box 50% on the x axis, 50% on the y, centering it perfectly */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
