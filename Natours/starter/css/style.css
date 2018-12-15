@@ -1,8 +1,37 @@
 /*
-COLORS:
+ *COLORS:
+ *
+ *Light green: #7ed56f
+ *Medium green: #55c57a
+ *Dark green: #28b485
+ *
+ */
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-*/
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /* 1.7 times bigger than default */
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh; /* 95% of the viewport height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.801),
+      /* need to use rgba for opacity in linear gradients */
+        rgba(40, 180, 131, 0.801)
+    ),
+    url(../img/hero.jpg); /* linear gradient first, then image */
+  background-size: cover;
+  background-position: top; /* keep image at top on resize */
+  clip-path: polygon(0 0, 100% 50%, 0 0, 100% 50%); /* TRBL */
+}
