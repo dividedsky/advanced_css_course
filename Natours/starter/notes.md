@@ -23,3 +23,11 @@
 
 ### notes
 * better practice to place images in container bc img is inline
+
+## 2.8
+### What you will learn
+* create css animations using @keyframes and the animation property
+
+### notes
+* for browser performance, it's best to only animate two properties: opacity and transform
+
