@@ -31,3 +31,12 @@
 ### notes
 * for browser performance, it's best to only animate two properties: opacity and transform
 
+## 2.9
+### What you will learn
+* what pseudo-elements and pseudo-classes are
+* how and why to use the ::after pseudo-element
+* how to create a creative hover animation effect with the transition property
+
+### notes
+* always use inline-block if you want to adding padding, width, etc
+* transform is super important! moving elements, hover effects, etc
