@@ -48,3 +48,47 @@
 ### notes
 * after pseudoelement
 
+## Section 3: How css works
+* getting started with css is easy, but knowing what's going on behind the scenes is more difficult
+
+## 3.12 Three pillars of writing good html and css
+* responsive design
+* maintainable and scalable code
+* web performance
+
+### responsive design
+* build a website that works well across all screen sizes.
+* a standard today, never build a nonresponsive website!
+* FLUID LAYOUTS?
+* responsive images
+* correct units
+* desktop first vs mobile first
+
+### maintainable and scalable code
+* more important for you, the developer, than the user
+* write code that is clean, easy to understand, supports future growth, and is reusable
+* care and think about architecture:
+  * how we organize files
+  * how we name classes
+  * how we structure our html
+
+### web performance
+* make apps faster and smaller and size!
+* less http requests, less code, compress code, css preprocessor, less images, compress images
+* images are usually the far biggest part of a website
+* so use images that are only necessary, and compress them!
+
+## 3.13 css behind the scenes - overview
+* what happens to our css when we load a webpage?
+  * browser loads the html and parses it
+  * browser builds DOM from the html
+  * as the html is parsed, the css is loaded and parsed (next lecture in detail)
+  * two main steps to parsing css:
+    * resolve conflicting css declarations through the cascade
+    * process final css values - ie converting % to px, etc
+  * parsed css is stored in the CSS Object Model (CSSOM)
+  * DOM and CSSOM form the render tree, and the page is rendered
+  * the page is rendered using the visual formatting model
+  * then the website is finally rendered to the screen
+
+## 3.14 how css is parsed: the cascade and specificity
