@@ -38,5 +38,13 @@
 * how to create a creative hover animation effect with the transition property
 
 ### notes
-* always use inline-block if you want to adding padding, width, etc
+* always use inline-block if you want to adding padding, width, etc /* why not block?? */
 * transform is super important! moving elements, hover effects, etc
+
+## 2.10
+### What you will learn
+* keep building that button - hover effect animation
+
+### notes
+* after pseudoelement
+
