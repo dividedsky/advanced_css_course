@@ -92,3 +92,35 @@
   * then the website is finally rendered to the screen
 
 ## 3.14 how css is parsed: the cascade and specificity
+* a rule consists of a selector(.my-class) and a declaration block
+* each declaration consists of a property and a value (declared value)
+
+### css parsing phase
+* first step is to resolve conficting declarations through the cascade
+* author declarations are the styles we write
+* user declarations are styles changed by user--ie user changing default font size in browser
+* browser declarations (user agent) are the default declarations for the browser--ie blue text in links
+* when more than once rule applies, the browser looks at the importance(weight), the specificity, and the source order of the declarations
+
+#### importance
+* !important, author declarations, user declarations, default browser declarations
+
+#### specificty
+* if everything has the same importance, the browser weight specifity
+* inline > id's > classes, pseudo-classes, attribute > elements, pseudo-elements
+* each selector gets a score: (inline, id, class, elements) ie (0, 1, 2, 2)
+* formula: (inline * ) + (id * ) + (classes * ) + elements
+* the winning declaration is called the cascaded value
+
+#### source order
+* if the specificity of two elements is the same, we go to the source order
+* the last declaration in the code will override other declarations and be applied
+
+### final notes
+* important has the highest priority, but (so) only use important as a last resource. much better to use correct specificities
+* inline styles have higher priority than external stylesheets
+* 1 id is more specific than 1000 classes
+* 1 class is more specific than 1000 elements
+* The universal selector * has no specificity value, so all other selectors have precedence over it
+* rely more on _specificity_ than on the _order_ of selectors
+* however, when using third-party stylesheets, put your author stylesheet last! this will allow it to override.
