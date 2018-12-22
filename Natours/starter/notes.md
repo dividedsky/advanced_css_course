@@ -124,3 +124,48 @@
 * The universal selector * has no specificity value, so all other selectors have precedence over it
 * rely more on _specificity_ than on the _order_ of selectors
 * however, when using third-party stylesheets, put your author stylesheet last! this will allow it to override.
+
+## 3.15 Specificity in Practice
+
+* if you need to use !important, that's a bad sign and you should probably refactor
+* be careful with selector specificty!
+
+## 3.16 How CSS is parsed, part 2: value processing
+
+* how values are processed in parsing phase
+* most common css units and how they are actually calculated
+* all units will be convereted to px, and you should know how that happens
+
+### how values are processed
+#### declared value -> cascaded value -> specified value -> computed value -> used value -> actual value
+* specified value: default value of a css property - more on this later
+* computed value: values with relative units are converted to pixels for inheritance
+  * also, values like red, orange, etc are computed and converted here
+* used value: final calculations based on layout. ex, 66% width calculated based on parent's width
+* actual value: values are usually rounded, ie from 184.8px to 185px
+
+### inheritance
+* some properties, like the ones related to text, inherit the computed value of their parents
+
+### how units are converted from relative to absolute(px)
+* length in %(ie height, margin, padding) the reference is always the parent element's width/length
+* ems and rems are font-based. ems use parent element, rems use root font size
+* ems for length use the _current element's_ computed font size as a reference
+* rem works the same way for font-size and length. ie it uses root for reference.
+
+### why should we size stuff for ems and rems?
+* by doing so, we can build more robust responsive layouts because changing font size will change length
+
+### vh and vw
+* percentage of viewport height or width
+* vh is really useful to build hero sections
+
+### summary
+* each property has an initial value, used if nothing else is declared and there's no inheritance
+* browsers specify a root font-size for each page (usually 16px)
+* % and relative values are always converted to px
+* % measured relative to parent's font size if used to specify font size, parent's width is used to specify width
+* em are measured relative to their parent's font-size for font-size, or current element's width for width
+* rem are _always_ measured relative to the root font-size
+* vh and vw are simply % measurements of the viewport's height and width
+
