@@ -169,7 +169,7 @@
 * rem are _always_ measured relative to the root font-size
 * vh and vw are simply % measurements of the viewport's height and width
 
-## How CSS Is Parsed, Part 3: Inheritance
+## 3.17 How CSS Is Parsed, Part 3: Inheritance
 * every css property must have a value, even if we nor the broswer specify it
 * first question css engine asks is, 'is there a cascaded value?'
 * if no, it asks if the property is inherited
@@ -182,3 +182,71 @@
 * inheritance only works if no one declares a value for that property
 * we can use the inherit keyword to force inheritance on a certain property
 * we can use the initial keyword to reset a property to its initial value
+
+## 3.18 Converting px to rem: an effective workflow
+
+### what you will learn
+* how and why to use rem units
+* a great workflow for converting px to rem
+
+### notes
+* we want an easy way to change all the measurements on our page to one simple setting
+* instead of writing hundreds of lines of media queries, we can just change the global font size
+* rem unit is always in relation to root font size
+* setting root font size allows us to change all our px font sizes to rem
+* change the root font size to 10px...is this better than 62.5% -- no!!
+* keep in mind that rems are not supported below IE9. but i don't really care :-/
+* move box-sizing from universal selector to body, set box-sizing in universal selector to inherit
+
+## 3.19 how css renders a website: the visual formatting model
+* css visual formatting model is an algorithm that calculates boxes and determines the layout of these boxes for each element in the render tree in order to determine the final layout of the page
+* one of the fundamental concepts of css
+* takes into account dimensions of the boxes (the box model), box type (inline, block, inline-block), positioning scheme(floats and positioning), staching contexts, other elements in the render tree, viewport size, img dimensions, etc
+* FILL AREA: the area that gets filled with the background color or background image - includes the padding and the border, but not the margin
+* height and width without border-box: borders + padding + width/height
+with border-box: width/height
+
+### box types: inline, block-level, inline-block
+#### block-level
+* display is usually set to block, but also could be flex, list-item, or table
+* p and div have their display set to block by default
+* block-level box will always occupy as much space as possible--usually 100% of parent's width
+* displayed vertically, one after another
+
+#### inline
+* content is distributed in lines
+* occupies only the content's space
+* no line breaks
+* no height and width
+* padding and margins only horizontal (left and right)
+
+#### inline-block
+* a mix of block and inline
+* technically, they are inline elements that use the block model on the inside
+* occupies only the content's space
+* no line breaks
+* box-model applies just as in regular block-level boxes
+
+### positioning schemes: normal flow, floats, absolute positioning
+#### normal flow
+* default positioning scheme
+* not floated and not absolutely positioned
+* relative positioning still uses the normal flow
+* elements are laid out on page according to their source order
+
+#### floats
+* element is removed from the normal flow and shifted to the left or right
+* texts and inline elements will wrap around the floated element
+* container will not adjust its height to the element, which can be problematic and is usually fixed with clear fixes
+
+#### absolute positioning (and fixed)
+* element is removed from the normal flow
+* _no impact on surrounding content or elements_
+* top, bottom, left, and right are used to offset the element from its relatively-positioned container
+
+### stacking contexts
+* determines in which order elements are rendered on the page
+* z-index is the most widely-used stacking context property
+* layers on the bottom of the stack are painted first, layers on the top are painted last, overlapping items below them
+* highest z-index appears on top, lowest z-index on the bottom
+* stacking context also affected by opacity different from 1, a transform, a filter, or other properties

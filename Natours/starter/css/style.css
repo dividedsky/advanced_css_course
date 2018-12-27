@@ -7,19 +7,26 @@
  *
  */
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /*font-size: 16px;*/
   line-height: 1.7; /* 1.7 times bigger than default */
   color: #777;
-  padding: 30px;
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -39,12 +46,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px; /* the reference point is the parent element set to relative */
-  left: 40px;
+  top: 4rem; /* the reference point is the parent element set to relative */
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 .text-box {
@@ -61,16 +68,16 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 
   backface-visibility: hidden; /* fix for shakiness during animations */
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -81,9 +88,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   /*animation-name: moveInRight;*/
   /*animation-duration: 1s;*/
@@ -95,7 +102,7 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10);
   }
 
   /*60% {
@@ -103,7 +110,7 @@ body {
   } */
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -115,11 +122,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -131,7 +138,7 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -145,23 +152,24 @@ body {
   /* link and visited pseudo classes */
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
-  border-radius: 100px; /* a really high number will simply round the edges */
+  padding: 1.5rem 4rem;
+  border-radius: 10rem; /* a really high number will simply round the edges */
   display: inline-block;
   transition: all 0.2s; /*( this adds animations to the hover and active effects! */
   position: relative;
+  font-size: 1.6rem;
 }
 
 .btn:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* offset X, offset Y, blur, shadow color */
+  transform: translateY(-1rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* offset X, offset Y, blur, shadow color */
 }
 
 .btn:active {
   transform: translateY(
-    -1px
+    -0.1rem
   ); /* this is always in relation to the initial state! not the hover state */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -174,7 +182,7 @@ body {
   display: inline-block; /* also always necessary! */
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
