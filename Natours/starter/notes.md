@@ -169,3 +169,16 @@
 * rem are _always_ measured relative to the root font-size
 * vh and vw are simply % measurements of the viewport's height and width
 
+## How CSS Is Parsed, Part 3: Inheritance
+* every css property must have a value, even if we nor the broswer specify it
+* first question css engine asks is, 'is there a cascaded value?'
+* if no, it asks if the property is inherited
+* some properties are inhereted, and some are not
+* mdn specs show whether props are inherited
+* if it is inherited, property becomes _computed_ value of its parent element
+* if it is not inherited, specified value will become initial value (also in mdn specs)
+* properties related to text are inherited: font-family, font-size, color
+* other properties, such as margin, padding, etc are not inherited
+* inheritance only works if no one declares a value for that property
+* we can use the inherit keyword to force inheritance on a certain property
+* we can use the initial keyword to reset a property to its initial value
