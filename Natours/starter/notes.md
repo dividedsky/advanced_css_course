@@ -250,3 +250,47 @@ with border-box: width/height
 * layers on the bottom of the stack are painted first, layers on the top are painted last, overlapping items below them
 * highest z-index appears on top, lowest z-index on the bottom
 * stacking context also affected by opacity different from 1, a transform, a filter, or other properties
+
+## 3.20 css architecture, components, and BEM
+* We want css code that is clean, modular, reusable, and ready for growth
+* need to think about architecture right from the beginning of the project
+* best strategy is think -> build -> architect mindset
+* think about the layout before we actually wriet the code
+* then build it in html and css with a consistent structure for naming classes
+* create a logical css architecture by using multiple files and folders
+
+### think
+* component-driven design: modular building blocks that make up interfaces
+* our interface is a collection of components held together by the overall layout of the page
+* components should be reusable across a project, and between different projects
+* build a library of your components!!
+* components should be independent so they can be used anywhere on the page
+  * this means that components should not be dependent on their parent elements!
+* this is similar to atomic design:
+  * smallest elements on a page are atoms, which form molecules, which form organisms
+
+### build
+* consistent approach to naming your classes!
+* many approaches--object-oriented css, etc--but BEM is what Jonas prefers
+
+#### BEM: Block Element Modifier
+* block is a standalone component that is meaningful on its own 
+* an element is a part of a block that has no meaning on its own: block__element
+* modifier is a flag we can put on the block or element to make it different: block__element--modifier
+
+### architect
+* logical folder and file structure for folder to live in
+* different methods, but Jonas uses the 7-1 pattern
+* 7 different folders for partial Sass files, and one main Sass file to import others into a compiled Sass sheet
+* 7 folders: base, components, layout, pages, themes, abstracts, vendors
+  * base: basic product definitions
+  * components: 1 file for each component
+  * layout: overall layour
+  * pages: styles for specific pages
+  * themes: different visual themes
+  * abstracts: code that doesn't output css, such as variables and mixins
+  * vendors: third-party css
+
+## 3.21: Putting BEM into practice
+* convert html/css into BEM naming
+
