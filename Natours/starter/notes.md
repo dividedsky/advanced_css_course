@@ -294,3 +294,23 @@ with border-box: width/height
 ## 3.21: Putting BEM into practice
 * convert html/css into BEM naming
 
+## 4.22 Sass intro
+
+## 4.23 What is Sass?
+* Sass is a CSS preprocessor, an extension of css that adds power and elegance
+* Sass source code is compiled into css code
+
+### Sass features
+* _variables_ for reusable values such as colors, font-sizes, etc
+* _nesting_ to nest selectors inside one another
+* _operators_ for math operations inside of css
+* _partials and imports_ to write css in different files and import them all into one file
+* _mixins_ to write reusable pieces of css
+* _functions,_ similar to mixins, with the difference being they produce a value that can be used
+* _extends_ to make selectors inherit declaratinos that are common to all of them
+* _control directives_ for writing complex code using conditionals and loops (not covered in this course)
+
+### sass vs scss: clearing up the confusion
+* SCSS is Sassy CSS
+* Sass syntax is indentation sensitive, doesn't use semicolons or brackets
+* scss syntax preserves the original css syntax
