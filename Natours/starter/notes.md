@@ -314,3 +314,14 @@ with border-box: width/height
 * SCSS is Sassy CSS
 * Sass syntax is indentation sensitive, doesn't use semicolons or brackets
 * scss syntax preserves the original css syntax
+
+## 4.24 First steps with sass: variable and nesting
+
+* variables with $
+* comments with //
+* nesting and & operator
+* floats and clearfix
+* color functions! ie &:hover {
+    background-color: darken($color-secondary, 15%);
+}
+
