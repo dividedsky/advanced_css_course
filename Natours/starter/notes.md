@@ -395,3 +395,7 @@ margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
 * in a mixin, the code is copied. with an extends, the selector is copied!
 * you should only use extends if the rules you are extending are inheritenly related
 * Jonas is not such a big fan of extends and prefers to use mixins. However, sometimes extends is the correct tool to use.
+
+## 4.26 a brief intro to the command line
+
+## 4.27 npm packages: installing sass locally
