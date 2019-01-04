@@ -325,3 +325,73 @@ with border-box: width/height
     background-color: darken($color-secondary, 15%);
 }
 
+## 4.25 First steps with sass: mixins, extends, and functions
+
+### Mixins
+* a reusable piece of code written into a mixin. when the mixin is used, code is tranferred
+* clearfix example: 
+```
+@mixin clearfix {
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+nav{
+@include clearfix;
+}
+```
+
+* common props example (DRY)
+    ```
+    @mixin style-link-text($color) {
+        text-decoration: none;
+        text-transform: none;
+        color: $color;
+    }
+
+    a:link {
+    @include style-link-text($color-text-dark);
+    }
+    ```
+
+### functions
+* darken is an example of a function, but we can write our own, as well
+* takes arguments, just as a mixin does
+* Jonas does not find them so useful as mixins
+
+* example:
+```
+@function divide($a, $b) {
+    @return $a / $b;
+}
+
+margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
+```
+
+### extends
+* write a placeholder, put styles in, and have other selectors extend the placeholder
+* example on buttons with duplicate styles:
+```
+%btn-placeholder {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    width: $width-button;
+    @include style-link-text($color-text-light);
+}
+
+.btn-main {
+    &:link {
+        @extend %btn-placeholder;
+    }
+}
+```
+
+* why use extends instead of mixin?
+* in a mixin, the code is copied. with an extends, the selector is copied!
+* you should only use extends if the rules you are extending are inheritenly related
+* Jonas is not such a big fan of extends and prefers to use mixins. However, sometimes extends is the correct tool to use.
