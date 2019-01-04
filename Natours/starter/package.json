@@ -4,7 +4,7 @@
   "description": "my natours page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass --watch sass/style.scss css/style.css"
   },
   "author": "justin",
   "license": "ISC",

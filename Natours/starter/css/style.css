@@ -6,146 +6,119 @@
  *Dark green: #28b485
  *
  */
-
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   /*font-size: 16px;*/
-  line-height: 1.7; /* 1.7 times bigger than default */
+  line-height: 1.7;
+  /* 1.7 times bigger than default */
   color: #777;
   padding: 3rem;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .header {
-  height: 95vh; /* 95% of the viewport height */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.801),
-      /* need to use rgba for opacity in linear gradients */
-        rgba(40, 180, 131, 0.801)
-    ),
-    url(../img/hero.jpg); /* linear gradient first, then image */
+  height: 95vh;
+  /* 95% of the viewport height */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /* linear gradient first, then image */
   background-size: cover;
-  background-position: top; /* keep image at top on resize */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* TRBL */
-  position: relative; /* by setting this to relative, this becomes the reference for .logo-box */
-}
+  background-position: top;
+  /* keep image at top on resize */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* TRBL */
+  position: relative;
+  /* by setting this to relative, this becomes the reference for .logo-box */ }
 
 .header__logo-box {
   position: absolute;
-  top: 4rem; /* the reference point is the parent element set to relative */
-  left: 4rem;
-}
+  top: 4rem;
+  /* the reference point is the parent element set to relative */
+  left: 4rem; }
 
 .header__logo {
-  height: 3.5rem;
-}
+  height: 3.5rem; }
 
 .header__text-box {
-  position: absolute; /* best way to absolutely center an element */
-  top: 40%; /* in relation to the parent element! */
+  position: absolute;
+  /* best way to absolutely center an element */
+  top: 40%;
+  /* in relation to the parent element! */
   left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  ); /* this shifts the box 50% on the x axis, 50% on the y, centering it perfectly */
-  text-align: center;
-}
+  transform: translate(-50%, -50%);
+  /* this shifts the box 50% on the x axis, 50% on the y, centering it perfectly */
+  text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 6rem;
-
-  backface-visibility: hidden; /* fix for shakiness during animations */
-}
+  backface-visibility: hidden;
+  /* fix for shakiness during animations */ }
 
 .heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
-
   animation-name: moveInLeft;
   animation-duration: 1s;
-  animation-timing-function: ease-out; /* how the animation will proceed */
+  animation-timing-function: ease-out;
+  /* how the animation will proceed */
   /*animation-delay: 3s;*/
-  /*animation-iteration-count: 3;*/
-}
+  /*animation-iteration-count: 3;*/ }
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-
   /*animation-name: moveInRight;*/
   /*animation-duration: 1s;*/
   /*animation-timing-function: ease-out;*/
   /*animation-delay: 3s;*/
-  animation: moveInRight 1s ease-out; /* shorthand for above */
-}
+  animation: moveInRight 1s ease-out;
+  /* shorthand for above */ }
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10);
-  }
-
+    transform: translateX(-10); }
   /*60% {
     transform: rotate(180deg);  /* wheeee! 
   } */
-
   80% {
-    transform: translateX(1rem);
-  }
-
+    transform: translateX(1rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
-  }
-
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-1rem);
-  }
-
+    transform: translateX(-1rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
-  }
-
+    transform: translateY(3rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 .btn:link,
 .btn:visited {
@@ -153,33 +126,33 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
-  border-radius: 10rem; /* a really high number will simply round the edges */
+  border-radius: 10rem;
+  /* a really high number will simply round the edges */
   display: inline-block;
-  transition: all 0.2s; /*( this adds animations to the hover and active effects! */
+  transition: all 0.2s;
+  /*( this adds animations to the hover and active effects! */
   position: relative;
-  font-size: 1.6rem;
-}
+  font-size: 1.6rem; }
 
 .btn:hover {
   transform: translateY(-1rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* offset X, offset Y, blur, shadow color */
-}
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* offset X, offset Y, blur, shadow color */ }
 
 .btn:active {
-  transform: translateY(
-    -0.1rem
-  ); /* this is always in relation to the initial state! not the hover state */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  transform: translateY(-0.1rem);
+  /* this is always in relation to the initial state! not the hover state */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   background-color: #fff;
-  color: #777;
-}
+  color: #777; }
 
 .btn::after {
-  content: ''; /* always necessary, even if it's empty! */
-  display: inline-block; /* also always necessary! */
+  content: '';
+  /* always necessary, even if it's empty! */
+  display: inline-block;
+  /* also always necessary! */
   height: 100%;
   width: 100%;
   border-radius: 10rem;
@@ -187,19 +160,18 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s;
-}
+  transition: all 0.4s; }
 
 .btn--white::after {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6); /* increases the size of the element */
-  opacity: 0;
-}
+  transform: scaleX(1.4) scaleY(1.6);
+  /* increases the size of the element */
+  opacity: 0; }
 
 .btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s; /* name duration timing delay */
-  animation-fill-mode: backwards; /* apply the 0% styled before the animation starts */
-}
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* name duration timing delay */
+  animation-fill-mode: backwards;
+  /* apply the 0% styled before the animation starts */ }

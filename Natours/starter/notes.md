@@ -399,3 +399,10 @@ margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
 ## 4.26 a brief intro to the command line
 
 ## 4.27 npm packages: installing sass locally
+* npm is just a package manager that comes with node. // i still don't know if i prefer node or yarn.
+* npm init
+* Jonas uses --save-dev, but i don't think that's necessary any longer << this is wrong, actually. save is no longer neccessary, but save-dev install is as a dev-dependency, not a dependency
+
+## 4.28 npm scripts: writing and compiling sass locally
+
+* wrote a script in package.json to compile sass
