@@ -1,0 +1,37 @@
+.header {
+  height: 95vh; /* 95% of the viewport height */
+  // need to use rgba for opacity in linear gradients
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg); /* linear gradient first, then image */
+  background-size: cover;
+  background-position: top; /* keep image at top on resize */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* TRBL */
+  position: relative; /* by setting this to relative, this becomes the reference for .logo-box */
+
+  &__logo-box {
+    // the ampersand here substitutes for ".header"
+    position: absolute;
+    top: 4rem; /* the reference point is the parent element set to relative */
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute; /* best way to absolutely center an element */
+    top: 40%; /* in relation to the parent element! */
+    left: 50%;
+    transform: translate(
+      -50%,
+      -50%
+    ); /* this shifts the box 50% on the x axis, 50% on the y, centering it perfectly */
+    text-align: center;
+  }
+}
+

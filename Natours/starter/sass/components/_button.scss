@@ -1,0 +1,54 @@
+.btn {
+  &:link,
+  &visited {
+    /* link and visited pseudo classes */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem; /* a really high number will simply round the edges */
+    display: inline-block;
+    transition: all 0.2s; /*( this adds animations to the hover and active effects! */
+    position: relative;
+    font-size: 1.6rem;
+  }
+  &:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /* offset X, offset Y, blur, shadow color */
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6); /* increases the size of the element */
+      opacity: 0;
+    }
+  }
+  &:active {
+    transform: translateY(
+      -0.1rem
+    ); /* this is always in relation to the initial state! not the hover state */
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+  &--white {
+    background-color: $color-white;
+    color: $color-gray-dark;
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &::after {
+    content: ''; /* always necessary, even if it's empty! */
+    display: inline-block; /* also always necessary! */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s; /* name duration timing delay */
+    animation-fill-mode: backwards; /* apply the 0% styled before the animation starts */
+  }
+}

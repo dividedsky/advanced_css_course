@@ -420,3 +420,31 @@ margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
 * use variable for remaining colors
 * you can use the & to substitute for the name anywhere(ie BEM naming), not just pseudoclasses
 * nested some things using the &.
+
+## 5.32 Implementing the 7-1 architecture
+
+* partial files start with an underscore
+* abstracts, base, layout, pages, components
+* there will be nothing in the main file except for imports
+
+## 5.33 review: three basic principles of responsive design
+
+### fluid grids and layouts
+* user % rather than px for all layout-related lengths
+
+### flexible/responsive images
+* images behave differently than text, so we need to ensure that they also adapt nicely
+* define their dimensions in % rather than fixed units
+* images also make up the biggest part of a websites size, so we should optimize images for different widths
+
+### media queries
+* allow us to change styles at breakpoints, allowing us to create different versions for different devices
+
+### three different ways to layout websites
+* float layouts
+* flexbox
+* css grid
+
+* jonas is still using floats because he doesn't think the other two are production ready
+* i guess it will be a good way to learn more about floats!
+* flexbox and css grid will be used in future projects
