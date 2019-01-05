@@ -4,7 +4,7 @@
   "description": "my natours page",
   "main": "index.js",
   "scripts": {
-    "sass:compile": "node-sass --watch sass/style.scss css/style.css"
+    "sass:compile": "node-sass -r --watch sass -o css"
   },
   "author": "justin",
   "license": "ISC",
