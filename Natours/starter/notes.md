@@ -374,6 +374,7 @@ margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
 ### extends
 * write a placeholder, put styles in, and have other selectors extend the placeholder
 * example on buttons with duplicate styles:
+
 ```
 %btn-placeholder {
     padding: 10px;
@@ -383,7 +384,8 @@ margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
     width: $width-button;
     @include style-link-text($color-text-light);
 }
-
+```
+```
 .btn-main {
     &:link {
         @extend %btn-placeholder;
@@ -406,3 +408,15 @@ margin: divide(60, 2) * 1px; //30px...use * 1px to convert to px
 ## 4.28 npm scripts: writing and compiling sass locally
 
 * wrote a script in package.json to compile sass
+
+## 4.29 reloading a page on file changes
+* npm package that reloads page! live-server // i'm not installing global, but Jonas did
+* just run it in the directory and it works. pretty cool. 
+* wish i had known about this before. i've been running vscode to do this!
+
+## 5.30 Section Intro
+
+## 5.31 Converting CSS to Sass: variables and nesting
+* use variable for remaining colors
+* you can use the & to substitute for the name anywhere(ie BEM naming), not just pseudoclasses
+* nested some things using the &.
